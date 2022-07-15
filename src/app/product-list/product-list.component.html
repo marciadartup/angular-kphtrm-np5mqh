@@ -2,7 +2,8 @@
 <div *nfFor= "let product of products">
  
   <h3>
-     <a [title]= "product.name + 'detail'">
+     <a [title]= "product.name + 'detail'"
+     [routerLink]="['/products', product.id]">
     {{product.name}}
     </a>
   </h3>
