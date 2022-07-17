@@ -19,9 +19,15 @@ export class CartService {
   }
 
   clearCart() {
-    this.items = [];
+
+     this.items = [];
     return this.items;
+    
   }
 /* . . . */
   constructor(private http: HttpClient) { }
+  getShippingPrices() {
+    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
+  }
 }
+
